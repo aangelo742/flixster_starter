@@ -6,8 +6,8 @@ let movie_form = document.querySelector("form");
 let search_bar = document.getElementById('search_bar');
 let movie_container = document.getElementById('movie_container');
 let now_playing = document.getElementById("now_playing");
-
-more_button = document.getElementById('more_button');
+let more_button = document.getElementById('more_button');
+let top_button = document.getElementById('top_button');
 
 //global variables
 let pageNumber = 1;
@@ -20,6 +20,8 @@ let searchedMovies = false;
 movie_form.addEventListener("submit", resetPage);
 movie_form.addEventListener("submit", getSearchedMovies);
 more_button.addEventListener("click", loadMoreMovies);
+top_button.addEventListener("click", backToTop);
+
 
 async function getCurrentMovies(evt) {
     currentMovies = true;
@@ -59,7 +61,7 @@ async function getSearchedMovies(evt) {
         return;
     }
 
-    now_playing.innerHTML = "Now showing movies containing: " + searchValue;
+    now_playing.innerHTML = "Now Displaying: Movies Containing " + searchValue;
 
     while (movie_container.firstChild) {
         movie_container.removeChild(movie_container.firstChild);
@@ -96,8 +98,14 @@ function loadMoreMovies(){
         getMoreSearchedMovies();
         console.log("searched movies: ", searchedMovies);
     }
- 
+    if(pageNumber == totalPages) {
+        more_button.classList.add('hidden');
+    }
+}
 
+function backToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 

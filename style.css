@@ -33,6 +33,10 @@ button {
     margin: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 #movie_container {
     display:flex;
     justify-content: center;
@@ -69,7 +73,7 @@ body {
 }
 
 #bottom-button-area {
-    margin: 5px;
+    text-align: center;
     padding: 5px;
     position: relative;
     
