@@ -10,20 +10,45 @@
 <body>
     <div id="header-content">
         <header>
-            <h2>Flixster</h2>
+            <img src="images/popcorn-icon.png" id="icon-popcorn">
+            <h2>FLIXSTER</h2>
             <form>
                 <input  id="search_bar" type="text" placeholder="Search..." name="search" style="width: 300px;">
                 <button  id="submit_button" type="submit">Submit</button>
             </form>
+            <button id="clear_button" class="hidden">Clear</button>
             <a name="top"></a>
         </header>
     </div>
     <div id="body-content">
-        <h3 id="now_playing">Now Playing</h3>
-        <div id="movie_container">
-            
+        <section id="information_panel" class="hidden information">
+            <article class="information_panel">
+                <section class="info">           
+                    <div class="movie-info">
+                        <h1 id="information_title"></h1>
+                        <p id="information_rating"></p>
+                        <p id="information_release_date"></p>
+                        <p id="information_genres"></p>
+                        <p id="information_body"></p>
+                    </div>
+                    <div class="movie-image">
+                        <img id="information_image" class="movie-poster">
+                    </div>
+                    
+                </section>
+                
+                
+                <button id="information_close">Close</button>
+            </article>
+        </section>
+        
+
+        <div id="movie_wrapper">
+            <h3 id="now_playing">Now Playing</h3>
+            <div id="movie_container"></div>
         </div>
     </div>
+
     <div id="bottom-button-area">
         <button id="more_button">Show More</button>
         <button id="top_button">Top of Page</button>
