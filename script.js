@@ -135,6 +135,7 @@ function loadMoreMovies(){
 function backToTop() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    
 }
 
 
@@ -181,9 +182,16 @@ function loadMovies(jsonData) {
         tempP.classList.add('movie-title');
         tempP.innerHTML = `${jsonData.results[i].title}`;
 
+        let ratingNum = ` ${jsonData.results[i].vote_average}`;
+        let voteCount = `${jsonData.results[i].vote_count}`;
+
+        if(ratingNum == 0 && voteCount == 0){
+            ratingNum = " No votes found";
+        }
+
         tempDiv.append(tempImage);
         tempDiv.append(ratingStar);
-        tempDiv.append(` ${jsonData.results[i].vote_average}`);
+        tempDiv.append(ratingNum);
         tempDiv.append(tempP);
         
 
