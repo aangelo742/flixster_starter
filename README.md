@@ -42,7 +42,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://aangelo742.git
 
 ### Walkthrough Video
 
-`http://g.recordit.co/79VTqDfEhX.gif`
+http://g.recordit.co/79VTqDfEhX.gif
 
 ### Reflection
 
